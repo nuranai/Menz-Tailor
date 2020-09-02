@@ -1,3 +1,3 @@
 # demo head 
 
-demo text# Menz-Tailor
+demo text

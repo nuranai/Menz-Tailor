@@ -419,6 +419,9 @@ body {
     transform: translate3d(0, 0, 0);
     opacity: 1;
     transition: all 0.4s ease-out 0.4s;
+    @media screen and (max-width: 767px) {
+        font-size: 31px;
+    }
 }
 
 .great-vibes__span {
@@ -728,14 +731,29 @@ body {
 //!feedback section
 
 .feedback {
+    max-width: 1200px;
     margin-top: 200px;
     margin-bottom: 285px;
-    max-width: 1200px;
+    padding: 0 15px;
     margin-right: auto;
     margin-left: auto;
     width: 100%;
-    padding: 0 15px;
     position: relative;
+    @media screen and (max-width: 1200px) {
+        max-width: 960px;
+        margin-top: 100px;
+        margin-bottom: 180px;
+    }
+    @media screen and (max-width: 992px) {
+        max-width: 720px;
+        margin-top: 100px;
+        margin-bottom: 180px;
+    }
+    @media screen and (max-width: 768px) {
+        max-width: 540px;
+        margin-top: 70px;
+        margin-bottom: 70px;
+    }
 }
 
 .feedback__buttons {
@@ -770,10 +788,28 @@ body {
     position: relative;
     top: 0;
     left: -1170px;
+    @media screen and (max-width: 1200px) {
+        left: -930px;
+    }
+    @media screen and (max-width: 992px) {
+        left: -690px;
+    }
+    @media screen and (max-width: 768px) {
+        left: -530px;
+    }
 }
 
 .feedback__slide {
     width: 1170px;
+    @media screen and (max-width: 1200px) {
+        width: 930px;
+    }
+    @media screen and (max-width: 992px) {
+        width: 690px;
+    }
+    @media screen and (max-width: 768px) {
+        width: 530px;
+    }
 }
 
 .feedback__slider.shifting {
@@ -797,7 +833,7 @@ body {
 }
 
 .feedback__numbers li {
-    padding: 0 20px;
+    margin: 0 20px;
     cursor: pointer;
     transition: all 0.2s ease-out;
 }

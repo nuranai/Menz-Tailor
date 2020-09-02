@@ -36,7 +36,10 @@ function sliderMove(items, prev, next) {
 
     prev.addEventListener('click', function () { shiftSlide(-1) });
     next.addEventListener('click', function () { shiftSlide(1) });
-    numberDOM.addEventListener('click', numberSlide);
+
+    for (let item of numberList) {
+        item.addEventListener('click', numberSlide);
+    }
 
     //*transition event
 
@@ -107,11 +110,16 @@ function sliderMove(items, prev, next) {
     }
 
     function numberSlide(e) {
+        console.log(e);
+        e.preventDefault();
+        console.log(e);
+        if  (e.target === document.querySelector(".feedback__number__active")) {
+            return;
+        }
         let newNumber = Number(e.target.innerHTML);
         let oldNumber = Number(document.querySelector(".feedback__number__active").innerHTML);
         let change = newNumber - oldNumber;
         items.classList.add("shifting");
-        console.log(items.style.left + " " + items.offsetLeft + " " + change + " " + slideSize);
         if (allowShift) {
             items.style.left = (items.offsetLeft - (change * slideSize)) + "px";
             numberChange(change);
@@ -140,7 +148,6 @@ function sliderMove(items, prev, next) {
             items.style.left =  -(1 * slideSize) + "px";
             index = 0;
         }
-        console.log(items.offsetLeft);
         allowShift = true;
     }
 }
