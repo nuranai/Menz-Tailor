@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <title>Menz Tailor</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="styles/styles.css" type="text/css">
+        <script src="https://kit.fontawesome.com/80a8e0ddee.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="header">
+            <div class="header__wrapper">
+                <a href="#" class="header__image">
+                    <img src="images/logo/logo.png" alt="Menz-Tailor">
+                </a>
+                <ul class="nav">
+                    <li class="nav__item">
+                        <a class="nav__home nav__item_hover" href="#home">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#services" class="nav__service nav__item_hover">Services</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#history" class="nav__history nav__item_hover">History</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#gallery" class="nav__gallery nav__item_hover">Gallery</a>
+                    </li>
+                    <li class="nav__item drop-btn"  onclick="dropMobile()">
+                        <a href="#blog" class="nav__blog nav__item_hover mobile-drop-a">Blog</a>
+                        <span class="mobile-drop-btn">+</span>
+                        <div class="drop-btn__items">
+                            <a href="#" class="drop-btn__item nav__item_hover">blog post</a>
+                            <a href="#" class="drop-btn__item nav__item_hover">block post</a>
+                        </div>
+                    </li>
+                    <li class="nav__item drop-btn" onclick="dropMobile()">
+                        <a href="#pages" class="nav__pages nav__item_hover">Pages</a>
+                        <span class="mobile-drop-btn">+</span>
+                        <div class="drop-btn__items">
+                            <a href="#" class="drop-btn__item nav__item_hover">blog post</a>
+                            <a href="#" class="drop-btn__item nav__item_hover">block post</a>
+                        </div>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contacts" class="nav__contacts nav__item_hover">Contacts</a>
+                    </li>
+                </ul>
+                <div class="visit__button hover__button">
+                    <a href="#">Visit Us</a>
+                </div>
+                <a href="javascript:void(0)" class="ham_button" onclick="hamActive()"><i class="fas fa-bars"></i></a>
+            </div>
+        </div>
+        <section class="main">
+                <div class="slider">
+                    <button class="slider__button-left slider__button" onclick="slidePlus(-1)">
+                        <span class="button__arrow"><i class="fas fa-arrow-left"></i></span>
+                    </button>
+                    <div class="slider__slides">
+                        <div class="slider__slide">
+                            <div class="slider__content">
+                                <h1 class="slider__text">Discover true<br/>personalization.</h1>
+                                <span class="slider__sub-text">Made to Measure Dress Shirts</span>
+                            </div>
+                        </div>
+                        <div class="slider__slide">
+                            <div class="slider__content">
+                                <h1 class="slider__text">Discover true<br/>personalization.</h1>
+                                <span class="slider__sub-text">Made to Measure Dress Shirts</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="slider__button-right slider__button" onclick="slidePlus(1)">
+                        <span class="button__arrow"><i class="fas fa-arrow-right"></i></span>
+                    </button>
+            </div>
+            <div class="clients">
+                    <span class="clients__span great-vibes__span" data-on-scroll="bottom">What we offer</span>
+                    <h1 class="clients__title block-title" data-on-scroll="bottom">What we offer to clients</h1>
+                <div class="offer" data-on-scroll="parent">
+                    <div class="offer__item" data-on-scroll="bottom">
+                        <div class="offer__img-container">
+                            <img src="images/offers/offers1.jpg" alt="offer #1" class="offer__img">
+                        </div>
+                        <p class="offer__number">1</p>
+                        <a href="#" class="offer__title">
+                            Perfect Body Measurment
+                        </a> 
+                        <p class="offer__p">
+                            Aorem Epsum Solor sit amet, consectetur adipiscing elited dsfo eiusmod tecsmpor
+                        </p>
+                        <a href="#" class="offer__arrow"><i class="fa fa-arrow-right"></i></a>
+                    </div>
+                    <div class="offer__item" data-on-scroll="bottom" style="transition-delay: 0.2s;">
+                        <div class="offer__img-container">
+                            <img src="images/offers/offers2.jpg" alt="offer #2" class="offer__img">
+                        </div>
+                        <p class="offer__number">2</p>
+                        <a href="#" class="offer__title">
+                            Premium Style Measurment
+                        </a> 
+                        <p class="offer__p">
+                            Aorem Epsum Solor sit amet, consectetur adipiscing elited dsfo eiusmod tecsmpor
+                        </p>
+                        <a href="#" class="offer__arrow"><i class="fa fa-arrow-right"></i></a>
+                    </div>
+                    <div class="offer__item boop" data-on-scroll="bottom" style="transition-delay: 0.4s;">
+                        <div class="offer__img-container">
+                            <img src="images/offers/offers3.jpg" alt="offer #3" class="offer__img">
+                        </div>
+                        <p class="offer__number">3</p>
+                        <a href="#" class="offer__title">
+                            Restoration With Sinserity
+                        </a> 
+                        <p class="offer__p">
+                            Aorem Epsum Solor sit amet, consectetur adipiscing elited dsfo eiusmod tecsmpor
+                        </p>
+                        <a href="#" class="offer__arrow"><i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="history">
+                <div class="history__video" data-on-scroll="left">
+                    <img src="images/videobg.jpg" alt="videobg" class="history__img">
+                    <a href="#" class="history__play-btn">
+                        <i class="fas fa-play"></i>
+                    </a>
+                </div>
+                <div class="history__convert">
+                    <h1 class="history__title text__shadow" data-on-scroll="right">HISTORY</h1>
+                    <div class="history__par" data-on-scroll="right">
+                        <h2 class="history__h2">Our History</h2>
+                        <p class="history__p">Duis aute irure dolor inasfa reprehenderit in voluptate velit esse cillum reeut cupidatatfugiat nulla pariatur. Excepteur sintxsdfas occaecat, cupidatat non proidente sunt in culpa qui officia deserunt, mollit anim id est laborum. Sedut des perspiciatis unde omnis iste.</p>
+                        <div class="history__about hover__button">
+                            <a href="#">About Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="feedback">
+                <span class="feedback__span great-vibes__span" data-on-scroll="bottom">What we offer</span>
+                <h1 class="feedback__title block-title" data-on-scroll="bottom">What we offer to clients</h1>
+                <div class="feedback__wrapper">
+                    <button class="feedback__prev feedback__buttons"><i class="fas fa-chevron-left"></i></button>
+                    <div class="feedback__slider">
+                        <div class="feedback__slide">
+                            <img src="images/speech-client/speech-client1.jpg" alt="1" class="feedback__img">
+                        </div>
+                        <div class="feedback__slide">
+                            <img src="images/speech-client/speech-client1.jpg" alt="2" class="feedback__img">
+                        </div>
+                        <div class="feedback__slide">
+                            <img src="images/speech-client/speech-client1.jpg" alt="3" class="feedback__img">
+                        </div>
+                    </div>
+                    <button class="feedback__next feedback__buttons"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <ul class="feedback__numbers">
+                    <li class="feedback__number feedback__number__active">1</li>
+                    <li class="feedback__number">2</li>
+                    <li class="feedback__number">3</li>
+                </ul>
+            </div>
+        </section>
+        <script src="scripts/header/header.js"></script>
+        <script src="scripts/slider/slider.js"></script>
+        <script src="scripts/on-scroll-hidden/on-scroll-hidden.js"></script>
+        <script src="scripts/infinite-slider/infinite-slider.js"></script>
+    </body>
+</html>
