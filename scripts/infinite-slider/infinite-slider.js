@@ -1,8 +1,8 @@
-let sliderItems = document.querySelector('.feedback__slider');
-let prev = document.querySelector('.feedback__prev');
-let next = document.querySelector('.feedback__next');
-let numberDOM = document.querySelector(".feedback__numbers");
-let numberList = document.querySelectorAll(".feedback__number");
+let sliderItems = document.querySelector('.infinite__slider');
+let prev = document.querySelector('.infinite__prev');
+let next = document.querySelector('.infinite__next');
+let numberDOM = document.querySelector(".infinite__numbers");
+let numberList = document.querySelectorAll(".infinite__number");
 
 function sliderMove(items, prev, next) {
     let posX1 = 0;
@@ -10,7 +10,7 @@ function sliderMove(items, prev, next) {
     let posInitial;
     let posFinal;
     let threshold = 100;
-    let slides = document.querySelectorAll(".feedback__slide");
+    let slides = document.querySelectorAll(".infinite__slide");
     let slideSize = slides[0].offsetWidth;
     let index = 0;
     let allowShift = true;
@@ -113,11 +113,11 @@ function sliderMove(items, prev, next) {
         console.log(e);
         e.preventDefault();
         console.log(e);
-        if  (e.target === document.querySelector(".feedback__number__active")) {
+        if  (e.target === document.querySelector(".infinite__number__active")) {
             return;
         }
         let newNumber = Number(e.target.innerHTML);
-        let oldNumber = Number(document.querySelector(".feedback__number__active").innerHTML);
+        let oldNumber = Number(document.querySelector(".infinite__number__active").innerHTML);
         let change = newNumber - oldNumber;
         items.classList.add("shifting");
         if (allowShift) {
@@ -129,12 +129,12 @@ function sliderMove(items, prev, next) {
     }
 
     function numberChange(plus) {
-        document.querySelector(".feedback__number__active").className = document.querySelector(".feedback__number__active").className.replace(" feedback__number__active", "");
+        document.querySelector(".infinite__number__active").className = document.querySelector(".infinite__number__active").className.replace(" infinite__number__active", "");
         if ((index + plus) % slides.length < 0) {
-            numberList[slides.length - 1].classList.add("feedback__number__active");
+            numberList[slides.length - 1].classList.add("infinite__number__active");
         }
         else {
-            numberList[(index + plus) % slides.length].classList.add("feedback__number__active");
+            numberList[(index + plus) % slides.length].classList.add("infinite__number__active");
         }
     }
 

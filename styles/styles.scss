@@ -846,7 +846,7 @@ body {
     transition: all 0.2s ease-out;
 }
 
-.feedback__number__active {
+.infinite__number__active {
     transform: translateY(-50%);
     text-decoration: underline double;
 }
@@ -968,6 +968,21 @@ body {
     font-size: 14px;
     padding: 20px 44px;
 }
+
+.testimonial {
+    margin: 0 auto;
+    padding: 120px 15px 160px 15px;
+    max-width: 1200px;
+    position: relative;
+}
+
+.testimonial__header {
+    z-index: 1;
+    position: relative;
+    bottom: -37px;
+}
+
+
 
 [data-on-scroll="bottom"] {
     transform: translate3d(0, 100%, 0);
