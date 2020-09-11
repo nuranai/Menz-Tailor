@@ -1,15 +1,14 @@
-let sliderItems = document.querySelector('.feedback__slider');
-let prev = document.querySelector('.feedback__prev');
-let next = document.querySelector('.feedback__next');
-let numberList = document.querySelectorAll(".feedback__number");
+let sliderItem = document.querySelector('.testimonial__slider');
+let next_but = document.querySelector('.testimonial__next');
+let numberDOM = document.querySelectorAll(".testimonial__number");
 
-function sliderMove(items, prev, next) {
+function sliderMove(items, next_but) {
     let posX1 = 0;
     let posX2 = 0;
     let posInitial;
     let posFinal;
     let threshold = 100;
-    let slides = document.querySelectorAll(".feedback__slide");
+    let slides = document.querySelectorAll(".testimonial__slide");
     let slideSize = slides[0].offsetWidth;
     let index = 0;
     let allowShift = true;
@@ -33,10 +32,9 @@ function sliderMove(items, prev, next) {
     
     //*click events
 
-    prev.addEventListener('click', function () { shiftSlide(-1) });
-    next.addEventListener('click', function () { shiftSlide(1) });
+    next_but.addEventListener('click', function () { shiftSlide(1) });
 
-    for (let item of numberList) {
+    for (let item of numberDOM) {
         item.addEventListener('click', numberSlide);
     }
 
@@ -110,11 +108,11 @@ function sliderMove(items, prev, next) {
 
     function numberSlide(e) {
         e.preventDefault();
-        if  (e.target === document.querySelector(".feedback__number__active")) {
+        if  (e.target === document.querySelector(".testimonial__number__active")) {
             return;
         }
         let newNumber = Number(e.target.innerHTML);
-        let oldNumber = Number(document.querySelector(".feedback__number__active").innerHTML);
+        let oldNumber = Number(document.querySelector(".testimonial__number__active").innerHTML);
         let change = newNumber - oldNumber;
         items.classList.add("shifting");
         if (allowShift) {
@@ -126,12 +124,12 @@ function sliderMove(items, prev, next) {
     }
 
     function numberChange(plus) {
-        document.querySelector(".feedback__number__active").className = document.querySelector(".feedback__number__active").className.replace(" feedback__number__active", "");
+        document.querySelector(".testimonial__number__active").className = document.querySelector(".testimonial__number__active").className.replace(" testimonial__number__active", "");
         if ((index + plus) % slides.length < 0) {
-            numberList[slides.length - 1].classList.add("feedback__number__active");
+            numberDOM[slides.length - 1].classList.add("testimonial__number__active");
         }
         else {
-            numberList[(index + plus) % slides.length].classList.add("feedback__number__active");
+            numberDOM[(index + plus) % slides.length].classList.add("testimonial__number__active");
         }
     }
 
@@ -149,4 +147,4 @@ function sliderMove(items, prev, next) {
     }
 }
 
-sliderMove(sliderItems, prev, next);
+sliderMove(sliderItem, next_but);
