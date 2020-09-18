@@ -7,6 +7,7 @@
 
 html {
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 button {
@@ -30,8 +31,46 @@ a {
 body {
     color: white;
     background-color: #0b1416;
+    scroll-behavior: smooth;
 }
 
+
+
+//! loading screen
+
+.loading {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 999;
+    background-color: #f7f7f7;
+}
+
+.loading__logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: solid 1px #fff;
+    border-top: solid 1px #0b1416;
+    animation: spin 2000ms ease infinite;
+}
+
+@keyframes spin {
+    0% {transform: translate(-50%, -50%) rotate(0deg);}
+    100% {transform: translate(-50%, -50%) rotate(360deg);}
+}
+
+.loading img{
+    max-width: 55px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 // !begining of the header
 
 .header {
@@ -41,7 +80,7 @@ body {
     width: 100%;
     position: fixed;
     box-sizing: border-box;
-    z-index:9999;
+    z-index:99;
     @media (max-width:980px) {
         padding: 18px 10px;
     }
@@ -221,7 +260,7 @@ body {
 
 //!main page
 .main {
-    padding-top: 3.75rem;
+    padding-top: 3.7rem;
 }
 
 //!positioning of the slider
@@ -232,7 +271,13 @@ body {
     height: 66%;
     width: 100%;
     background-color: #fff;
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    @media screen and (max-width: 768px) {
+        background: none;
+    }
 }
 
 .slider {
@@ -290,13 +335,13 @@ body {
 //!addeble class
 .slider__active {
     opacity: 1;
-    z-index: 99;
+    z-index: 9;
 }
 //!slider buttons
 .slider__button {
     position: absolute;
     bottom: 0;
-    z-index: 999;
+    z-index: 99;
     width: 60px;
     height: 60px;
     background-color: #fff;
@@ -980,6 +1025,10 @@ body {
     z-index: 1;
     position: relative;
     bottom: -20px;
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+    transition-delay: 0.4s;
 }
 
 .testimonial__wrapper {
@@ -989,6 +1038,10 @@ body {
     max-width: 1200px;
     user-select: none;
     margin: 0 auto;
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+    transition-delay: 0.6s;
     @media screen and (max-width: 1200px) {
         max-width: 930px;
         // margin-top: 100px;
@@ -1075,6 +1128,10 @@ body {
     width: 100%;
     justify-content: center;
     text-align: center;
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+    transition-delay: 0.6s;
 }
 
 .testimonial__numbers li {
@@ -1091,6 +1148,173 @@ body {
 
 .testimonial__number__active {
     color: #fff !important;
+}
+
+footer {
+    display: flex;
+    flex-direction: row-reverse;
+    background-size: 50%;
+    background: url(../images/footer_bg.jpg) no-repeat left, bottom;
+    position: relative;
+    @media screen and (max-width: 1750px){
+        background-size: 63%;
+    }
+    @media screen and (max-width: 1500px){
+        background-size: 50%;
+    }
+    @media screen and (max-width: 1440px){
+        background-size: 70%;
+    }
+    @media screen and (max-width: 1300px){
+        background-size: 80%;
+    }
+    @media screen and (max-width: 1200px){
+        background: none;
+    }
+}
+
+.footer__wrap {
+    position: relative;
+    width: 68%;
+    background-color: #c6a16e;
+    margin-top: 150px;
+    padding: 50px 260px 50px 100px;
+    right: 0;
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+    @media screen and (max-width: 1440px){
+        padding: 50px 60px 50px 100px;
+    }
+    @media screen and (max-width: 1200px){
+        width: 100%;
+        padding: 50px 100px;
+    }
+    @media screen and (max-width: 992px){
+        padding: 50px 60px 50px 100px;
+    }
+    @media screen and (max-width: 768px){
+        padding: 50px 15px 40px;
+    }
+}
+
+.footer__wrap h3 {
+    font-size: 60px;
+    font-family: "Josefin Sans", sans-serif;
+    display: block;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 55px;
+    padding-bottom: 55px;
+    border-bottom: 1px solid #d6bc97;
+    @media screen and (max-width: 768px){
+        font-size: 31px;
+        line-height: 1.2;
+        margin-bottom: 40px;
+        padding-bottom: 42px;
+    }
+}
+
+.footer__menu {
+    display: flex;
+    justify-content: space-between;
+    @media screen and (max-width: 768px){
+        display: block;
+    }
+}
+
+.footer__menu h4 {
+    font-size: 25px;
+    margin-bottom: 29px;
+    font-weight: 400;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.contact {
+    width: 36%;
+    margin-bottom: 50px;
+    @media screen and (max-width: 992px){
+        width: 45%;
+    }
+    @media screen and (max-width: 768px){
+        width: 65%;
+    }
+    @media screen and (max-width: 576px){
+        width: 100%;
+    }
+}
+
+.contact p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: 15px;
+}
+
+.link {
+    width: 25%;
+    margin-bottom: 50px;
+    @media screen and (max-width: 768px){
+        width: 50%;
+    }
+}
+
+.link__list li{
+    font-size: 16px;
+    margin-bottom: 7px;
+    font-family: "Montserrat", sans-serif;
+    transition: padding 0.3s ease-out;
+}
+
+.link__list li:hover {
+    padding-left: 5px;
+}
+
+.link__list li a {
+    color: white;
+}
+
+.social {
+    width: 25%;
+    margin-bottom: 50px;
+    @media screen and (max-width: 768px){
+        width: 50%;
+    }
+}
+
+.social a{
+    color: white;
+    padding: 0 6px;
+    transition: color 0.3s ease-out;
+}
+
+.social a:hover {
+    color: black;
+}
+
+.arigato {
+    padding-top: 55px;
+}
+
+.arigato p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.scroll__up {
+    // display: none;
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #b99562;
+    color: white;
+    right: 31px;
+    bottom: 18px;
+    display: block;
+    font-size: 20px;
+    text-align: center;
+    line-height: 48px;
+    box-shadow: 0 0 10px 3px rgba(108, 98, 98, 0.2);
 }
 
 [data-on-scroll="bottom"] {
