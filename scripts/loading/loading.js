@@ -1,6 +1,7 @@
 load = document.querySelector(".loading");
 
-function siteLoad(load) {
+function siteLoad() {
+    load.style.display = "none";
 }
 
-siteLoad(load);
+window.addEventListener("load", siteLoad);
