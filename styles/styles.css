@@ -37,7 +37,7 @@ body {
 .loading {
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   z-index: 999;
   background-color: #f7f7f7;
 }
@@ -1024,7 +1024,6 @@ body {
 }
 
 .feedback {
-  max-width: 1200px;
   margin-top: 200px;
   margin-bottom: 285px;
   padding: 0 15px;
@@ -1058,6 +1057,12 @@ body {
   }
 }
 
+@media screen and (min-width: 1201px) {
+  .feedback {
+    max-width: 1200px;
+  }
+}
+
 .feedback__buttons {
   position: absolute;
   top: 50%;
@@ -1066,78 +1071,41 @@ body {
   font-size: 30px;
   color: #c6a16c;
   cursor: pointer;
-  z-index: 999;
+  z-index: 9;
 }
 
-.feedback__prev {
+.feedback .infinite__prev {
   left: 0;
   -webkit-transform: translateX(50%);
           transform: translateX(50%);
 }
 
-.feedback__next {
+.feedback .infinite__next {
   right: 0;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
 
-.feedback__wrapper {
+.feedback .infinite__wrapper {
   overflow: hidden;
   position: relative;
   width: 100%;
 }
 
-.feedback__slider {
+.feedback .infinite__slides {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 10000px;
   position: relative;
   top: 0;
-  left: -1170px;
 }
 
-@media screen and (max-width: 1200px) {
-  .feedback__slider {
-    left: -930px;
-  }
+.feedback .infinite__slide {
+  height: 100%;
 }
 
-@media screen and (max-width: 992px) {
-  .feedback__slider {
-    left: -690px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .feedback__slider {
-    left: -530px;
-  }
-}
-
-.feedback__slide {
-  width: 1170px;
-}
-
-@media screen and (max-width: 1200px) {
-  .feedback__slide {
-    width: 930px;
-  }
-}
-
-@media screen and (max-width: 992px) {
-  .feedback__slide {
-    width: 690px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .feedback__slide {
-    width: 530px;
-  }
-}
-
-.feedback__slider.shifting {
+.infinite__slides.shifting {
   -webkit-transition: left 0.4s ease-out;
   transition: left 0.4s ease-out;
 }
@@ -1151,7 +1119,7 @@ body {
           user-select: none;
 }
 
-.feedback__numbers {
+.feedback .infinite__numbers {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1165,14 +1133,14 @@ body {
   text-align: center;
 }
 
-.feedback__numbers li {
+.feedback .infinite__numbers li {
   margin: 0 20px;
   cursor: pointer;
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
 }
 
-.feedback__number__active {
+.feedback .infinite__number__active {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   -webkit-text-decoration: underline double;
@@ -1345,7 +1313,7 @@ body {
           transition-delay: 0.4s;
 }
 
-.testimonial__wrapper {
+.testimonial .infinite__wrapper {
   z-index: 2;
   overflow: hidden;
   position: relative;
@@ -1367,24 +1335,24 @@ body {
 }
 
 @media screen and (max-width: 1200px) {
-  .testimonial__wrapper {
+  .testimonial .infinite__wrapper {
     max-width: 930px;
   }
 }
 
 @media screen and (max-width: 992px) {
-  .testimonial__wrapper {
+  .testimonial .infinite__wrapper {
     max-width: 690px;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .testimonial__wrapper {
+  .testimonial .infinite__wrapper {
     max-width: 530px;
   }
 }
 
-.testimonial__slider {
+.testimonial .infinite__slides {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1395,24 +1363,24 @@ body {
 }
 
 @media screen and (max-width: 1200px) {
-  .testimonial__slider {
+  .testimonial .infinite__slides {
     left: -930px;
   }
 }
 
 @media screen and (max-width: 992px) {
-  .testimonial__slider {
+  .testimonial .infinite__slides {
     left: -690px;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .testimonial__slider {
+  .testimonial .infinite__slides {
     left: -530px;
   }
 }
 
-.testimonial__slide {
+.testimonial .infinite__slide {
   width: 1170px;
   height: 100%;
   border: 1px solid #b99562;
@@ -1422,31 +1390,31 @@ body {
 }
 
 @media screen and (max-width: 1200px) {
-  .testimonial__slide {
+  .testimonial .infinite__slide {
     width: 930px;
   }
 }
 
 @media screen and (max-width: 992px) {
-  .testimonial__slide {
+  .testimonial .infinite__slide {
     width: 690px;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .testimonial__slide {
+  .testimonial .infinite__slide {
     width: 530px;
   }
 }
 
-.testimonial__slide span {
+.testimonial .infinite__slide span {
   display: inline-block;
   margin-bottom: 50px;
   font-size: 40px;
   color: #c6a16c;
 }
 
-.testimonial__slide p {
+.testimonial .infinite__slide p {
   font-family: montserrat, sans-serif;
   font-size: 24px;
   font-weight: 400;
@@ -1455,24 +1423,24 @@ body {
 }
 
 @media screen and (max-width: 992px) {
-  .testimonial__slide p {
+  .testimonial .infinite__slide p {
     font-size: 18px;
     margin-bottom: 30px;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .testimonial__slide p {
+  .testimonial .infinite__slide p {
     font-size: 15px;
   }
 }
 
-.testimonial__slider.shifting {
+.testimonial .infinite__slides.shifting {
   -webkit-transition: left 0.4s ease-out;
   transition: left 0.4s ease-out;
 }
 
-.testimonial__numbers {
+.testimonial .infinite__numbers {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1495,19 +1463,19 @@ body {
           transition-delay: 0.6s;
 }
 
-.testimonial__numbers li {
+.testimonial .infinite__numbers li {
   margin: 0 20px;
   cursor: pointer;
   color: gray;
 }
 
-.testimonial__next {
+.testimonial .infinite__next {
   font-size: 16px;
   color: gray;
   cursor: pointer;
 }
 
-.testimonial__number__active {
+.testimonial .infinite__number__active {
   color: #fff !important;
 }
 
