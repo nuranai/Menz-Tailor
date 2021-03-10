@@ -1,3 +1,3 @@
-# demo head 
+# First practise with basic tools 
 
-demo text
+https://nuranai.github.io/Menz-Tailor/
